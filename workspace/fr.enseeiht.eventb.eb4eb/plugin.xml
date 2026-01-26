@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            base-type="org.rodinp.core.rodin"
+            file-extensions="ael"
+            id="annotationCollectionFile"
+            name="EB4EB Annotation File"
+            priority="normal">
+      </content-type>
+   </extension>
+   <extension
+         point="org.rodinp.core.internalElementTypes">
+      <internalElementType
+            class="fr.enseeiht.eventb.eb4eb.basis.AvailableAnnotation"
+            id="availableAnnotation"
+            name="EB4EB Available Annotation">
+      </internalElementType>
+      <internalElementType
+            class="fr.enseeiht.eventb.eb4eb.basis.Annotation"
+            id="annotation"
+            name="EB4EB Annotation">
+      </internalElementType>
+      <internalElementType
+            class="fr.enseeiht.eventb.eb4eb.basis.AnnotationCollectionRoot"
+            id="annotationCollectionRoot"
+            name="EB4EB Annotation Collection Root">
+      </internalElementType>
+   </extension>
+   <extension
+         point="org.rodinp.core.internalElementTypes">
+      <internalElementType
+            class="fr.enseeiht.eventb.eb4eb.basis.SCAvailableAnnotation"
+            id="scAvailableAnnotation"
+            name="EB4EB Statically Checked Available Annotation">
+      </internalElementType>
+   </extension>
+   <extension
+         point="org.rodinp.core.attributeTypes">
+      <attributeType
+            id="availableAnnotation"
+            kind="handle"
+            name="EB4EB Available Annotation Attribute">
+      </attributeType>
+      <attributeType
+            id="annotationTargetElement"
+            kind="string"
+            name="Annotation Target Element">
+      </attributeType>
+   </extension>
+   <extension
+         point="org.rodinp.core.fileAssociations">
+      <fileAssociation
+            content-type-id="fr.enseeiht.eventb.eb4eb.annotationCollectionFile"
+            root-element-type="fr.enseeiht.eventb.eb4eb.annotationCollectionRoot">
+      </fileAssociation>
+   </extension>
+   <extension
+         point="org.rodinp.core.itemRelations">
+      <relationship
+            parentTypeId="org.eventb.core.machineFile">
+         <childType
+               typeId="fr.enseeiht.eventb.eb4eb.availableAnnotation">
+         </childType>
+      </relationship>
+      <relationship
+            parentTypeId="org.eventb.core.invariant">
+         <childType
+               typeId="fr.enseeiht.eventb.eb4eb.availableAnnotation">
+         </childType>
+      </relationship>
+      <relationship
+            parentTypeId="fr.enseeiht.eventb.eb4eb.availableAnnotation">
+         <attributeType
+               typeId="fr.enseeiht.eventb.eb4eb.availableAnnotation">
+         </attributeType>
+      </relationship>
+      <relationship
+            parentTypeId="fr.enseeiht.eventb.eb4eb.annotationCollectionRoot">
+         <attributeType
+               typeId="org.eventb.core.configuration">
+         </attributeType>
+         <childType
+               typeId="fr.enseeiht.eventb.eb4eb.annotation">
+         </childType>
+      </relationship>
+      <relationship
+            parentTypeId="fr.enseeiht.eventb.eb4eb.annotation">
+         <attributeType
+               typeId="fr.enseeiht.eventb.eb4eb.annotationTargetElement">
+         </attributeType>
+      </relationship>
+   </extension>
+   <extension
+         point="org.rodinp.core.itemRelations">
+      <relationship
+            parentTypeId="org.eventb.core.scMachineFile">
+         <childType
+               typeId="fr.enseeiht.eventb.eb4eb.scAvailableAnnotation">
+         </childType>
+      </relationship>
+      <relationship
+            parentTypeId="org.eventb.core.scInvariant">
+         <childType
+               typeId="fr.enseeiht.eventb.eb4eb.scAvailableAnnotation">
+         </childType>
+      </relationship>
+      <relationship
+            parentTypeId="fr.enseeiht.eventb.eb4eb.scAvailableAnnotation">
+         <attributeType
+               typeId="org.eventb.core.source">
+         </attributeType>
+         <attributeType
+               typeId="fr.enseeiht.eventb.eb4eb.availableAnnotation">
+         </attributeType>
+      </relationship>
+   </extension>
+   <extension
+         point="org.eventb.core.scModuleTypes">
+      <processorType
+            class="fr.enseeiht.eventb.eb4eb.sc.RootAvailableAnnotationModule"
+            id="rootAvailableAnnotationModule"
+            name="Available Annotation Module (Root)"
+            parent="org.eventb.core.machineModule">
+      </processorType>
+      <processorType
+            class="fr.enseeiht.eventb.eb4eb.sc.InvariantAvailableAnnotationModule"
+            id="invarariantAvailableAnnotationModule"
+            name="Available Annotation Module (Invariant)"
+            parent="org.eventb.core.machineInvariantModule">
+      </processorType>
+   </extension>
+   <extension
+         point="org.eventb.core.configurations">
+      <configuration
+            id="eb4ebMachineConfig"
+            name="EB4EB for Machine Plug-In Configuration">
+         <scModule
+               id="fr.enseeiht.eventb.eb4eb.rootAvailableAnnotationModule">
+         </scModule>
+         <scModule
+               id="fr.enseeiht.eventb.eb4eb.invarariantAvailableAnnotationModule">
+         </scModule>
+      </configuration>
+   </extension>
+
+</plugin>

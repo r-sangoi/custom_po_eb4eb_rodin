@@ -36,7 +36,7 @@ import fr.enseeiht.eventb.eb4eb.internal.ui.acceptor.MachineRootAcceptor;
 import fr.enseeiht.eventb.eb4eb.internal.ui.builder.EB4EBContextBuilder;
 import fr.enseeiht.eventb.eb4eb.internal.ui.generator.TheoryPathGenerator;
 import fr.enseeiht.eventb.eb4eb.internal.ui.visitor.EB4EBStructurGeneratorVisitor;
-import fr.enseeiht.eventb.eb4eb.ui.EB4EBGeneratorUIPlugin;
+import fr.enseeiht.eventb.eb4eb.ui.EB4EBUIPlugin;
 
 public class NewEB4EBContextWizard extends Wizard implements INewWizard {
 
@@ -45,7 +45,7 @@ public class NewEB4EBContextWizard extends Wizard implements INewWizard {
 	 * The identifier of the new EB4EB context wizard (value
 	 * <code>"fr.enseeiht.eb4eb.generator.ui.wizards.NewEB4EBContext"</code>).
 	 */
-	public static final String WIZARD_ID = EB4EBGeneratorUIPlugin.PLUGIN_ID
+	public static final String WIZARD_ID = EB4EBUIPlugin.PLUGIN_ID
 			+ ".wizards.NewEB4EBContext";
 
 	// The wizard page.
@@ -151,7 +151,7 @@ public class NewEB4EBContextWizard extends Wizard implements INewWizard {
 		
 		RodinCore.run(new IWorkspaceRunnable() {
 			public void run(IProgressMonitor pMonitor) throws CoreException {
-				final IRodinFile rodinFile = rodinProject.getRodinFile(DatabaseUtilitiesTheoryPath.getTheoryPathFullName(EB4EBGeneratorUIPlugin.THEORY_PATH_NAME));
+				final IRodinFile rodinFile = rodinProject.getRodinFile(DatabaseUtilitiesTheoryPath.getTheoryPathFullName(EB4EBUIPlugin.THEORY_PATH_NAME));
 				rodinFile.create(false, pMonitor);
 				final IInternalElement rodinRoot = rodinFile.getRoot();
 				((IConfigurationElement) rodinRoot).setConfiguration(DatabaseUtilitiesTheoryPath.THEORY_PATH_CONFIGURATION, pMonitor);

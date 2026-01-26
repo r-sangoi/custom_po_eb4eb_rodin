@@ -50,7 +50,7 @@ import org.eventb.theory.core.maths.extensions.WorkspaceExtensionsManager;
 import org.rodinp.core.RodinDBException;
 
 import fr.enseeiht.eventb.eb4eb.internal.ui.EB4EBAstUtils;
-import fr.enseeiht.eventb.eb4eb.ui.EB4EBGeneratorUIPlugin;
+import fr.enseeiht.eventb.eb4eb.ui.EB4EBUIPlugin;
 
 public class EB4EBStructureGenerator {
 
@@ -73,15 +73,15 @@ public class EB4EBStructureGenerator {
 		this.factory = FormulaFactory.getDefault();
 		this.destructors = new HashMap<String, IDestructorExtension>();
 
-		ITheoryPathRoot theoryPath = DatabaseUtilitiesTheoryPath.getTheoryPath(EB4EBGeneratorUIPlugin.THEORY_PATH_NAME,
+		ITheoryPathRoot theoryPath = DatabaseUtilitiesTheoryPath.getTheoryPath(EB4EBUIPlugin.THEORY_PATH_NAME,
 				root.getRodinFile().getRodinProject());
 
 		WorkspaceExtensionsManager mgr = WorkspaceExtensionsManager.getInstance();
 		
 		IDeployedTheoryRoot coreTheory = null;
 		for (IAvailableTheory avTheory : theoryPath.getAvailableTheories()) {
-			if(avTheory.getAvailableTheoryProject().getElementName().equals(EB4EBGeneratorUIPlugin.THEORY_CORE_PROJECT_NAME) &&
-					avTheory.getLabel().equals(EB4EBGeneratorUIPlugin.THEORY_CORE_FILE_NAME))
+			if(avTheory.getAvailableTheoryProject().getElementName().equals(EB4EBUIPlugin.THEORY_CORE_PROJECT_NAME) &&
+					avTheory.getLabel().equals(EB4EBUIPlugin.THEORY_CORE_FILE_NAME))
 				coreTheory = avTheory.getDeployedTheory();
 		}
 		if(coreTheory==null)
@@ -621,7 +621,7 @@ public class EB4EBStructureGenerator {
 	}
 
 	private static CoreException newCoreException(String message) {
-		IStatus status = new Status(IStatus.ERROR, EB4EBGeneratorUIPlugin.PLUGIN_ID, message);
+		IStatus status = new Status(IStatus.ERROR, EB4EBUIPlugin.PLUGIN_ID, message);
 		return new CoreException(status);
 	}
 	

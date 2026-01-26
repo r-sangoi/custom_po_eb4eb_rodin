@@ -8,13 +8,16 @@ import org.eventb.core.IContextRoot;
 import org.eventb.core.ast.Predicate;
 import org.rodinp.core.RodinDBException;
 
-public abstract class ContextBuilder implements IBuilder {
+import fr.enseeiht.eventb.eb4eb.internal.ui.callbacks.ContextCallback;
+
+public abstract class ContextBuilder extends Builder</*Predicate, */ContextCallback> {
 	
 	private IContextRoot root;
 	private IProgressMonitor pMonitor;
 	private Counter axiomLabelCounter;
 	
 	public ContextBuilder(IContextRoot root, IProgressMonitor pMonitor) {
+		super();
 		this.root = root;
 		this.pMonitor = pMonitor;
 		this.axiomLabelCounter = new Counter("axm%d");

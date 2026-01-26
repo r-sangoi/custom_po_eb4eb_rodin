@@ -20,4 +20,7 @@
     <org.eventb.core.axiom name="8" org.eventb.core.label="axm13" org.eventb.core.predicate="Grd(mch)={e,var3,var2,var1·e=evt2∨e=evt1 ∣ e ↦ (var3 ↦ var2 ↦ var1)}"/>
     <org.eventb.core.axiom name="9" org.eventb.core.label="axm14" org.eventb.core.predicate="BAP(mch)={e,var3,var2,var1,var3p,var2p,var1p·(e=evt2∧var3p=var3∧var2p=var2∧var1p=var1)∨(e=evt1∧var1p=8∧var3p=var3∧var2p=var2) ∣ e ↦ (var3 ↦ var2 ↦ var1 ↦ (var3p ↦ var2p ↦ var1p))}"/>
     <org.eventb.core.axiom name=":" org.eventb.core.label="axm15" org.eventb.core.predicate="check_Machine_Consistency(mch)" org.eventb.core.theorem="true"/>
+    <org.eventb.core.axiom name=";" org.eventb.core.label="axm16" org.eventb.core.predicate="⊤" org.eventb.core.theorem="true"/>
+    <org.eventb.core.axiom name="=" org.eventb.core.label="axm17" org.eventb.core.predicate="⊤" org.eventb.core.theorem="true"/>
+    <org.eventb.core.axiom name="&gt;" org.eventb.core.label="axm18" org.eventb.core.predicate="⊤" org.eventb.core.theorem="true"/>
 </org.eventb.core.contextFile>

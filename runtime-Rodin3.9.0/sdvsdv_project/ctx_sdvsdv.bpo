@@ -37,5 +37,8 @@
     </org.eventb.core.poPredicateSet>
     <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/sdvsdv_project/ctx_sdvsdv.bpo|org.eventb.core.poFile#ctx_sdvsdv|org.eventb.core.poPredicateSet#HYP4" org.eventb.core.poStamp="0">
         <org.eventb.core.poPredicate name="PRD14" org.eventb.core.predicate="check_Machine_Consistency(mch)" org.eventb.core.source="/sdvsdv_project/ctx_sdvsdv.buc|org.eventb.core.contextFile#ctx_sdvsdv|org.eventb.core.axiom#:"/>
+        <org.eventb.core.poPredicate name="PRD15" org.eventb.core.predicate="⊤" org.eventb.core.source="/sdvsdv_project/ctx_sdvsdv.buc|org.eventb.core.contextFile#ctx_sdvsdv|org.eventb.core.axiom#;"/>
+        <org.eventb.core.poPredicate name="PRD16" org.eventb.core.predicate="⊤" org.eventb.core.source="/sdvsdv_project/ctx_sdvsdv.buc|org.eventb.core.contextFile#ctx_sdvsdv|org.eventb.core.axiom#="/>
+        <org.eventb.core.poPredicate name="PRD17" org.eventb.core.predicate="⊤" org.eventb.core.source="/sdvsdv_project/ctx_sdvsdv.buc|org.eventb.core.contextFile#ctx_sdvsdv|org.eventb.core.axiom#&gt;"/>
     </org.eventb.core.poPredicateSet>
 </org.eventb.core.poFile>

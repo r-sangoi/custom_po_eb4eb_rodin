@@ -11,7 +11,7 @@ import org.eventb.theory.core.ISCTheoryPathRoot;
 import org.eventb.theory.core.ITheoryPathRoot;
 import org.rodinp.core.RodinDBException;
 
-import fr.enseeiht.eventb.eb4eb.ui.EB4EBGeneratorUIPlugin;
+import fr.enseeiht.eventb.eb4eb.ui.EB4EBUIPlugin;
 
 public class TheoryPathGenerator {
 
@@ -25,10 +25,10 @@ public class TheoryPathGenerator {
 		
 		// Generate the theory path containing the EB4EB Core Theory
 		IAvailableTheoryProject theoryProject = this.root.createChild(IAvailableTheoryProject.ELEMENT_TYPE, null, pMonitor);
-		theoryProject.setTheoryProject(DatabaseUtilities.getRodinProject(EB4EBGeneratorUIPlugin.THEORY_CORE_PROJECT_NAME), pMonitor);
+		theoryProject.setTheoryProject(DatabaseUtilities.getRodinProject(EB4EBUIPlugin.THEORY_CORE_PROJECT_NAME), pMonitor);
 		
 		IAvailableTheory availableTheory = theoryProject.createChild(IAvailableTheory.ELEMENT_TYPE, null, pMonitor);
-		availableTheory.setAvailableTheory(DatabaseUtilities.getDeployedTheory(EB4EBGeneratorUIPlugin.THEORY_CORE_FILE_NAME, DatabaseUtilities.getRodinProject(EB4EBGeneratorUIPlugin.THEORY_CORE_PROJECT_NAME)), pMonitor);
+		availableTheory.setAvailableTheory(DatabaseUtilities.getDeployedTheory(EB4EBUIPlugin.THEORY_CORE_FILE_NAME, DatabaseUtilities.getRodinProject(EB4EBUIPlugin.THEORY_CORE_PROJECT_NAME)), pMonitor);
 		//availableTheory.setLabel("test", monitor); TODO : erreur
 		
 		// Copy the theory path from the target machine project

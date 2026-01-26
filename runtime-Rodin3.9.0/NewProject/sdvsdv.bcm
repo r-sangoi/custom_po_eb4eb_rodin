@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.scMachineFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd">
+<org.eventb.core.scMachineFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd;fr.enseeiht.eventb.eb4eb.eb4ebMachineConfig">
     <org.eventb.core.scInvariant name="'" org.eventb.core.label="inv1" org.eventb.core.predicate="var1∈ℕ" org.eventb.core.source="/NewProject/sdvsdv.bum|org.eventb.core.machineFile#sdvsdv|org.eventb.core.invariant#." org.eventb.core.theorem="false"/>
     <org.eventb.core.scInvariant name="(" org.eventb.core.label="inv3" org.eventb.core.predicate="var2∈List(ℕ)" org.eventb.core.source="/NewProject/sdvsdv.bum|org.eventb.core.machineFile#sdvsdv|org.eventb.core.invariant#3" org.eventb.core.theorem="false"/>
     <org.eventb.core.scInvariant name=")" org.eventb.core.label="inv4" org.eventb.core.predicate="var3∈ℙ(ℤ × ℤ)" org.eventb.core.source="/NewProject/sdvsdv.bum|org.eventb.core.machineFile#sdvsdv|org.eventb.core.invariant#4" org.eventb.core.theorem="false"/>
@@ -18,4 +18,5 @@
         <org.eventb.core.scAction name="'" org.eventb.core.assignment="var1 ≔ 8" org.eventb.core.label="act1" org.eventb.core.source="/NewProject/sdvsdv.bum|org.eventb.core.machineFile#sdvsdv|org.eventb.core.event#(|org.eventb.core.action#'"/>
     </org.eventb.core.scEvent>
     <org.eventb.core.scEvent name="var7" org.eventb.core.accurate="true" org.eventb.core.convergence="1" org.eventb.core.extended="false" org.eventb.core.label="evt2" org.eventb.core.source="/NewProject/sdvsdv.bum|org.eventb.core.machineFile#sdvsdv|org.eventb.core.event#)"/>
+    <fr.enseeiht.eventb.eb4eb.scAvailableAnnotation fr.enseeiht.eventb.eb4eb.availableAnnotation="/NewProject/Annotation.ael|fr.enseeiht.eventb.eb4eb.annotationCollectionRoot#Annotation|fr.enseeiht.eventb.eb4eb.annotation#(" name="ANN0" org.eventb.core.source="/NewProject/sdvsdv.bum|org.eventb.core.machineFile#sdvsdv|fr.enseeiht.eventb.eb4eb.availableAnnotation#7"/>
 </org.eventb.core.scMachineFile>

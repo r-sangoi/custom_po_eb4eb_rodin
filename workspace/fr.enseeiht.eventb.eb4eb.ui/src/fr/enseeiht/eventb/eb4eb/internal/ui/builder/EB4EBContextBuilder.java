@@ -36,7 +36,8 @@ import org.eventb.theory.core.ITheoryPathRoot;
 import org.eventb.theory.core.maths.extensions.WorkspaceExtensionsManager;
 
 import fr.enseeiht.eventb.eb4eb.internal.ui.EB4EBAstUtils;
-import fr.enseeiht.eventb.eb4eb.ui.EB4EBGeneratorUIPlugin;
+import fr.enseeiht.eventb.eb4eb.internal.ui.callbacks.ContextCallback;
+import fr.enseeiht.eventb.eb4eb.ui.EB4EBUIPlugin;
 
 public class EB4EBContextBuilder extends ContextBuilder {
 
@@ -80,14 +81,14 @@ public class EB4EBContextBuilder extends ContextBuilder {
 		this.factory = FormulaFactory.getDefault();
 		this.destructors = new HashMap<String, IDestructorExtension>();
 
-		ITheoryPathRoot theoryPath = DatabaseUtilitiesTheoryPath.getTheoryPath(EB4EBGeneratorUIPlugin.THEORY_PATH_NAME, root.getRodinFile().getRodinProject());
+		ITheoryPathRoot theoryPath = DatabaseUtilitiesTheoryPath.getTheoryPath(EB4EBUIPlugin.THEORY_PATH_NAME, root.getRodinFile().getRodinProject());
 
 		WorkspaceExtensionsManager mgr = WorkspaceExtensionsManager.getInstance();
 
 		IDeployedTheoryRoot coreTheory = null;
 		for (IAvailableTheory avTheory : theoryPath.getAvailableTheories()) {
-			if (avTheory.getAvailableTheoryProject().getElementName().equals(EB4EBGeneratorUIPlugin.THEORY_CORE_PROJECT_NAME)
-					&& avTheory.getLabel().equals(EB4EBGeneratorUIPlugin.THEORY_CORE_FILE_NAME))
+			if (avTheory.getAvailableTheoryProject().getElementName().equals(EB4EBUIPlugin.THEORY_CORE_PROJECT_NAME)
+					&& avTheory.getLabel().equals(EB4EBUIPlugin.THEORY_CORE_FILE_NAME))
 				coreTheory = avTheory.getDeployedTheory();
 		}
 		if (coreTheory == null)
@@ -138,6 +139,12 @@ public class EB4EBContextBuilder extends ContextBuilder {
 		};
 	}
 
+	/** 
+	 * Update the formula factory.
+	 * <p>Must be called if custom theory plugin is used in the machine.</p>
+
+	 * @param machineFactory the factory of the machine
+	 */
 	public void translate(FormulaFactory machineFactory) {
 		this.factory = this.factory.withExtensions(machineFactory.getExtensions());
 	}
@@ -152,6 +159,10 @@ public class EB4EBContextBuilder extends ContextBuilder {
 		bidps.add(fidp.asDecl());
 	}
 
+	/**
+	 * Add type of one variable.
+	 * @param type the type of the variable
+	 */
 	public void addVariableType(Type type) {
 		this.variableTypes.add(type.translate(this.factory));
 	}
@@ -260,9 +271,6 @@ public class EB4EBContextBuilder extends ContextBuilder {
 			super.addConstant(ev);
 		}
 		super.addConstant(MACHINE_NAME);
-
-		try {
-			
 		
 		// Axioms
 		generateAxiomPartitionEvents();
@@ -275,12 +283,15 @@ public class EB4EBContextBuilder extends ContextBuilder {
 		generateAxiomAP();
 		generateAxiomGuard();
 		generateAxiomBAP();
-		}catch (Exception e) {
-			e.printStackTrace();
-		}
+		
 		// Theorem
 		Collection<Expression> checkArgs = Collections.singleton(this.factory.makeFreeIdentifier(MACHINE_NAME, null));
 		super.addAxiom(this.factory.makeExtendedPredicate(this.checkOperator, checkArgs, new ArrayList<Predicate>(), null), true);
+		
+		for (ContextCallback callback : super.getCallbacks()) {
+			Predicate pred = callback.call(this.factory, MACHINE_NAME, this.events);
+			super.addAxiom(pred, true);
+		}
 	}
 
 	private void generateAxiomPartitionEvents() throws CoreException {
@@ -515,7 +526,7 @@ public class EB4EBContextBuilder extends ContextBuilder {
 	}
 
 	private static CoreException newCoreException(String message) {
-		IStatus status = new Status(IStatus.ERROR, EB4EBGeneratorUIPlugin.PLUGIN_ID, message);
+		IStatus status = new Status(IStatus.ERROR, EB4EBUIPlugin.PLUGIN_ID, message);
 		return new CoreException(status);
 	}
 }

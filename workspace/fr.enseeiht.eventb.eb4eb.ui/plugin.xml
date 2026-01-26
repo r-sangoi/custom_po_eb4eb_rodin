@@ -7,12 +7,20 @@
             id="fr.enseeiht.eb4eb.generator.ui.commands.generate"
             name="Generate EB4EB">
       </command>
+      <command
+            id="fr.enseeiht.eventb.eb4eb.ui.commands.newAnnotationCollection"
+            name="New Annotation File">
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.handlers">
       <handler
-            class="fr.enseeiht.eventb.eb4eb.internal.ui.handlers.GenerateEB4EBAction"
+            class="fr.enseeiht.eventb.eb4eb.internal.ui.handlers.GenerateEB4EBHandler"
             commandId="fr.enseeiht.eb4eb.generator.ui.commands.generate">
+      </handler>
+      <handler
+            class="fr.enseeiht.eventb.eb4eb.internal.ui.handlers.NewAnnotationCollectionHandler"
+            commandId="fr.enseeiht.eventb.eb4eb.ui.commands.newAnnotationCollection">
       </handler>
    </extension>
    <extension
@@ -42,6 +50,169 @@
             </visibleWhen>
          </command>
       </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:fr.systerel.explorer.navigator.view">
+         <command
+               commandId="fr.enseeiht.eventb.eb4eb.ui.commands.newAnnotationCollection"
+               icon="icons/sample@2x.png"
+               id="fr.enseeiht.eventb.eb4eb.ui.toolbar.newAnnotationCollection"
+               style="push"
+               tooltip="Create New Annotation Collection File">
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eventb.ui.editorItems">
+      <element
+            childrenSuffix="END"
+            imagePath="icons/sample@2x.png"
+            prefix="ANNOTATION COLLECTION"
+            prettyPrinter="fr.enseeiht.eventb.eb4eb.ui.editors.html.AnnotationCollectionPrettyPrinter"
+            typeId="fr.enseeiht.eventb.eb4eb.annotationCollectionRoot">
+      </element>
+      <element
+            imagePath="icons/sample@2x.png"
+            prefix="ANNOTATIONS"
+            prettyPrinter="fr.enseeiht.eventb.eb4eb.ui.editors.html.AnnotationPrettyPrinter"
+            typeId="fr.enseeiht.eventb.eb4eb.annotation">
+      </element>
+      <choiceAttribute
+            class="fr.enseeiht.eventb.eb4eb.ui.manipulation.AnnotationTargetElementManipulation"
+            expandsHorizontally="false"
+            id="fr.enseeiht.eventb.eb4eb.ui.annotationTargetElement"
+            required="true"
+            typeId="fr.enseeiht.eventb.eb4eb.annotationTargetElement">
+      </choiceAttribute>
+      <childRelation
+            parentTypeId="fr.enseeiht.eventb.eb4eb.annotationCollectionRoot">
+         <childType
+               typeId="fr.enseeiht.eventb.eb4eb.annotation">
+         </childType>
+      </childRelation>
+      <attributeRelation
+            elementTypeId="fr.enseeiht.eventb.eb4eb.annotationCollectionRoot">
+         <attributeReference
+               descriptionId="org.eventb.ui.comment">
+         </attributeReference>
+      </attributeRelation>
+      <attributeRelation
+            elementTypeId="fr.enseeiht.eventb.eb4eb.annotation">
+         <attributeReference
+               descriptionId="org.eventb.ui.identifier">
+         </attributeReference>
+         <attributeReference
+               descriptionId="fr.enseeiht.eventb.eb4eb.ui.annotationTargetElement">
+         </attributeReference>
+         <attributeReference
+               descriptionId="org.eventb.ui.expression">
+         </attributeReference>
+         <attributeReference
+               descriptionId="org.eventb.ui.comment">
+         </attributeReference>
+      </attributeRelation>
+      <element
+            defaultColumn="0"
+            imagePath="icons/sample.png"
+            prefix="ANNOTATION"
+            prettyPrinter="fr.enseeiht.eventb.eb4eb.ui.editors.html.AvailableAnnotationPrettyPrinter"
+            typeId="fr.enseeiht.eventb.eb4eb.availableAnnotation">
+      </element>
+      <choiceAttribute
+            class="fr.enseeiht.eventb.eb4eb.ui.manipulation.AvailableAnnotationAttributeManipulation"
+            expandsHorizontally="false"
+            id="fr.enseeiht.eventb.eb4eb.ui.availableAnnotation"
+            required="true"
+            typeId="fr.enseeiht.eventb.eb4eb.availableAnnotation">
+      </choiceAttribute>
+      <childRelation
+            parentTypeId="org.eventb.core.machineFile">
+         <childType
+               typeId="fr.enseeiht.eventb.eb4eb.availableAnnotation">
+         </childType>
+      </childRelation>
+      <childRelation
+            parentTypeId="org.eventb.core.invariant">
+         <childType
+               typeId="fr.enseeiht.eventb.eb4eb.availableAnnotation">
+         </childType>
+      </childRelation>
+      <attributeRelation
+            elementTypeId="fr.enseeiht.eventb.eb4eb.availableAnnotation">
+         <attributeReference
+               descriptionId="fr.enseeiht.eventb.eb4eb.ui.availableAnnotation">
+         </attributeReference>
+         <attributeReference
+               descriptionId="org.eventb.ui.comment">
+         </attributeReference>
+      </attributeRelation>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="fr.enseeiht.eventb.eb4eb.ui.editors.AnnotationCollectionEditor"
+            contributorClass="fr.enseeiht.eventb.eb4eb.ui.editors.AnnotationCollectionEditorContribution"
+            default="true"
+            extensions="ael"
+            id="fr.enseeiht.eventb.eb4eb.ui.annotationCollectionEditor"
+            name="EB4EB Annotation Editor">
+         <contentTypeBinding
+               contentTypeId="fr.enseeiht.eventb.eb4eb.annotationCollectionFile">
+         </contentTypeBinding>
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+      <navigatorContent
+            contentProvider="fr.enseeiht.eventb.eb4eb.ui.explorer.AnnotationCollectionContentProvider"
+            id="fr.enseeiht.eventb.eb4eb.ui.explorer.annotationCollectionNavigatorContent"
+            labelProvider="fr.enseeiht.eventb.eb4eb.ui.explorer.AnnotationCollectionLabelProvider"
+            name="Annotation File"
+            priority="highest">
+         <triggerPoints>
+            <or>
+               <instanceof
+                     value="org.eclipse.core.resources.IProject">
+               </instanceof>
+               <instanceof
+                     value="fr.enseeiht.eventb.eb4eb.IAnnotationCollectionRoot">
+               </instanceof>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <instanceof
+                  value="fr.enseeiht.eventb.eb4eb.IAnnotationCollectionRoot">
+            </instanceof>
+         </possibleChildren>
+      </navigatorContent>
+      <actionProvider
+            class="fr.enseeiht.eventb.eb4eb.ui.explorer.RootActionProvider"
+            id="fr.enseeiht.eventb.eb4eb.ui.explorer.annotationCollectionActionProvider">
+         <enablement>
+            <instanceof
+                  value="fr.enseeiht.eventb.eb4eb.IAnnotationCollectionRoot">
+            </instanceof>
+         </enablement>
+      </actionProvider>
+   </extension>
+   <extension
+         point="org.eclipse.ui.navigator.viewer">
+      <viewerContentBinding
+            viewerId="fr.systerel.explorer.navigator.view">
+         <includes>
+            <contentExtension
+                  pattern="fr.enseeiht.eventb.eb4eb.ui.explorer.annotationCollectionNavigatorContent">
+            </contentExtension>
+         </includes>
+      </viewerContentBinding>
+      <viewerActionBinding
+            viewerId="fr.systerel.explorer.navigator.view">
+         <includes>
+            <actionExtension
+                  pattern="fr.enseeiht.eventb.eb4eb.ui.explorer.annotationCollectionActionProvider">
+            </actionExtension>
+         </includes>
+      </viewerActionBinding>
    </extension>
 
 </plugin>

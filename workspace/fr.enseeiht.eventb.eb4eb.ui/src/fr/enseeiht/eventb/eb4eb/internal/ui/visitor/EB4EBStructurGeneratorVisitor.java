@@ -15,14 +15,24 @@ import org.eventb.core.ast.FormulaFactory;
 import org.eventb.core.ast.ITypeEnvironment;
 import org.rodinp.core.RodinDBException;
 
+import fr.enseeiht.eventb.eb4eb.ISCAvailableAnnotation;
 import fr.enseeiht.eventb.eb4eb.internal.ui.builder.EB4EBContextBuilder;
+import fr.enseeiht.eventb.eb4eb.internal.ui.callbacks.ContextCallback;
 
 public class EB4EBStructurGeneratorVisitor implements IMachineRootVisitor<EB4EBContextBuilder> {
-
+	
 	@Override
 	public void visitMachineRoot(EB4EBContextBuilder builder, ISCMachineRoot machineRoot) throws CoreException {
-		// need to be called if custom theory plugin is used in the machine
 		builder.translate(machineRoot.getTypeEnvironment().getFormulaFactory());
+		// TODO : edit
+//		builder.addCallbacks(new ContextCallback());
+//		builder.addCallbacks(new ContextCallback());
+//		builder.addCallbacks(new ContextCallback());
+		ISCAvailableAnnotation[] avAnnotations = machineRoot.getChildrenOfType(ISCAvailableAnnotation.ELEMENT_TYPE);
+		for (ISCAvailableAnnotation avAnnotation : avAnnotations) {
+			System.out.println("avAnnotation : " + avAnnotation.getAnnotation().getIdentifierString());
+			builder.addCallbacks(new ContextCallback(avAnnotation.getAnnotation()));
+		}
 	}
 
 	@Override
@@ -39,6 +49,11 @@ public class EB4EBStructurGeneratorVisitor implements IMachineRootVisitor<EB4EBC
 			builder.addTheoremPredicate(inv.getPredicate(env));
 		else
 			builder.addInvariantPredicate(inv.getPredicate(env));
+		
+		ISCAvailableAnnotation[] avAnnotations = inv.getChildrenOfType(ISCAvailableAnnotation.ELEMENT_TYPE);
+		for (ISCAvailableAnnotation avAnnotation : avAnnotations) {
+			System.out.println("avAnnotation : " + avAnnotation.getAnnotation().getIdentifierString());
+		}
 	}
 
 	@Override
