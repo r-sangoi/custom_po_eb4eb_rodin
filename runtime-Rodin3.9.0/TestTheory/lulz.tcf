@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.theory.core.scTheoryRoot org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.theory.core.thy" org.eventb.core.source="/TestTheory/lulz.tuf">
-    <org.eventb.theory.core.scTypeParameter name="A" org.eventb.core.source="/TestTheory/lulz.tuf|org.eventb.theory.core.theoryRoot#lulz|org.eventb.theory.core.typeParameter#(" org.eventb.core.type="ℙ(A)"/>
-    <org.eventb.theory.core.scDatatypeDefinition name="List" org.eventb.core.source="/TestTheory/lulz.tuf|org.eventb.theory.core.theoryRoot#lulz|org.eventb.theory.core.datatypeDefinition#'" org.eventb.theory.core.hasError="false">
-        <org.eventb.theory.core.scTypeArgument name="A" org.eventb.core.source="/TestTheory/lulz.tuf|org.eventb.theory.core.theoryRoot#lulz|org.eventb.theory.core.datatypeDefinition#'|org.eventb.theory.core.typeArgument#(" org.eventb.theory.core.givenType="A"/>
-        <org.eventb.theory.core.scDatatypeConstructor name="Nil" org.eventb.core.source="/TestTheory/lulz.tuf|org.eventb.theory.core.theoryRoot#lulz|org.eventb.theory.core.datatypeDefinition#'|org.eventb.theory.core.datatypeConstructor#'"/>
-    </org.eventb.theory.core.scDatatypeDefinition>
-</org.eventb.theory.core.scTheoryRoot>

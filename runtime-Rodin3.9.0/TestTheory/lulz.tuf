@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.theory.core.theoryRoot org.eventb.core.configuration="org.eventb.theory.core.thy">
-    <org.eventb.theory.core.datatypeDefinition name="'" org.eventb.core.identifier="List">
-        <org.eventb.theory.core.datatypeConstructor name="'" org.eventb.core.identifier="Nil"/>
-        <org.eventb.theory.core.typeArgument name="(" org.eventb.theory.core.givenType="A"/>
-    </org.eventb.theory.core.datatypeDefinition>
-    <org.eventb.theory.core.typeParameter name="(" org.eventb.core.identifier="A"/>
-</org.eventb.theory.core.theoryRoot>

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.theory.core.theoryLanguageRoot org.eventb.core.configuration="org.eventb.theory.core.tul">
-    <org.eventb.theory.core.availableTheoryProject name="'" org.eventb.theory.core.availableTheoryProject="/TestTheory">
-        <org.eventb.theory.core.availableTheory name="'" org.eventb.theory.core.availableTheory="/TestTheory/lulz.dtf|org.eventb.theory.core.deployedTheoryRoot#lulz"/>
-    </org.eventb.theory.core.availableTheoryProject>
-</org.eventb.theory.core.theoryLanguageRoot>

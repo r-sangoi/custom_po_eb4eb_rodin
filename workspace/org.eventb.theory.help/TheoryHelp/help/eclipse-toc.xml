@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='ISO-8859-1' ?>
-<toc label="Theory Plug-in User Manual">
-    <topic label="Motivation" href="sect0001.html" /><topic label="Capabilities" href="sect0002.html" /><topic label="Quick Start" href="quickStart.html">
-       <topic label="Install Theory Plug-in" href="newTFW.html" /><topic label="Create A New Theory" href="sect0003.html" /><topic label="Add a Type Parameter" href="typePar.html" /><topic label="Create an Operator Definition" href="seqOP.html" /><topic label="Specify a Polymorphic Theorem" href="theoremEx.html" /><topic label="Specify an Inference Rule" href="blockEx.html" />
-    </topic><topic label="Scoping of Theories" href="sect0004.html" /><topic label="Examples" href="sect0005.html">
-       <topic label="Sequence" href="sect0006.html" /><topic label="List" href="sect0007.html" />
-    </topic>
-</toc>

@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<fr.enseeiht.eventb.eb4eb.annotationCollectionRoot org.eventb.core.configuration="fr.enseeiht.eventb.eb4eb.ael">
-    <fr.enseeiht.eventb.eb4eb.annotation fr.enseeiht.eventb.eb4eb.annotationTargetElement="org.eventb.core.invariant" name="'" org.eventb.core.expression="0" org.eventb.core.identifier="an_annotation"/>
-    <fr.enseeiht.eventb.eb4eb.annotation fr.enseeiht.eventb.eb4eb.annotationTargetElement="org.eventb.core.machineFile" name="(" org.eventb.core.expression="0" org.eventb.core.identifier="another"/>
-</fr.enseeiht.eventb.eb4eb.annotationCollectionRoot>
