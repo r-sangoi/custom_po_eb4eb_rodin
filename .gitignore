@@ -62,10 +62,6 @@ local.properties
 # Typically, this file would be tracked if it contains build/dependency configurations:
 #.project
 
-
-# Rodin related plug-in
-runtime-Rodin/
-org.eventb.core.ast.extensions/
-
 # Rodin Theory Plug-in
+org.eventb.core.ast.extensions/
 org.eventb.theory.*/
