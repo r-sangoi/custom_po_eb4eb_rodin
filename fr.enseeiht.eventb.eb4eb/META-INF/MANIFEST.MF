@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: EB4EB Generator
+Bundle-SymbolicName: fr.enseeiht.eventb.eb4eb;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: fr.enseeiht.eventb.eb4eb.EB4EBPlugin
+Require-Bundle: org.eclipse.core.runtime,
+ org.rodinp.core;bundle-version="1.10.0",
+ org.eventb.core;bundle-version="3.7.0",
+ org.eclipse.core.resources;bundle-version="3.20.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Automatic-Module-Name: fr.enseeiht.eventb.eb4eb
+Bundle-ActivationPolicy: lazy
+Export-Package: fr.enseeiht.eventb.eb4eb,
+ fr.enseeiht.eventb.eb4eb.basis
