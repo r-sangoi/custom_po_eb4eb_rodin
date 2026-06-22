@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<toc version="1.0"> 
+<tocitem>Theory Plug-in User Manual
+    <tocitem target="a0000000002">Motivation
+        
+    </tocitem><tocitem target="a0000000003">Capabilities
+        
+    </tocitem><tocitem target="quickStart">Quick Start
+        <tocitem target="newTFW">Install Theory Plug-in
+            
+        </tocitem><tocitem target="newTFW">Create A New Theory
+            
+        </tocitem><tocitem target="typePar">Add a Type Parameter
+            
+        </tocitem><tocitem target="seqOP">Create an Operator Definition
+            
+        </tocitem><tocitem target="theoremEx">Specify a Polymorphic Theorem
+            
+        </tocitem><tocitem target="blockEx">Specify an Inference Rule
+            
+        </tocitem>
+    </tocitem><tocitem target="a0000000004">Scoping of Theories
+        
+    </tocitem><tocitem target="a0000000005">Examples
+        <tocitem target="a0000000006">Sequence
+            
+        </tocitem><tocitem target="a0000000007">List
+            
+        </tocitem>
+    </tocitem>
+</tocitem>
+</toc>

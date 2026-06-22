@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>Create an Operator Definition</title>
+<link href="theoremEx.html" title="Specify a Polymorphic Theorem" rel="next" />
+<link href="typePar.html" title="Add a Type Parameter" rel="prev" />
+<link href="quickStart.html" title="Quick Start" rel="up" />
+<link rel="stylesheet" href="styles/plastex-styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<span>Previous: <a href="typePar.html">Add a Type Parameter</a></span>
+<span>Next: <a href="theoremEx.html">Specify a Polymorphic Theorem</a></span>
+<span>Up: <a href="quickStart.html">Quick Start</a></span>
+</div>
+
+<div><h2 id="seqOP">3.4 Create an Operator Definition</h2>
+<p> Event-B mathematical language has many useful operators. Examples include cardinality operator <img src="images/img-0004.png" alt="$card$" style="vertical-align:0px; 
+                                     width:33px; 
+                                     height:11px" class="math gen" />, the finiteness predicate operator <img src="images/img-0005.png" alt="$finite$" style="vertical-align:-3px; 
+                                     width:44px; 
+                                     height:14px" class="math gen" /> and the function application <img src="images/img-0015.png" alt="$.(.)$" style="vertical-align:-4px; 
+                                     width:20px; 
+                                     height:18px" class="math gen" />. Other useful operators can be defined using the Theory plug-in. The following figure shows a definition of a sequence operator. </p><center> <div id="a0000000011" class="figure"><p> <img src="images/img-0016.png" alt="\includegraphics{images/SeqOperator.png}" style="width:1020px; height:466px" />
+ </p><div class="caption"><b>Figure 7</b>: <span>Sequence Operator Definition</span></div></div> </center><p>Note the numbering in the above picture. The following explains each part of the definition: </p><ol class="enumerate">
+<li><p><b class="bfseries">Syntax Symbol</b>: this specifies the syntax token that will be reserved for the new operator (sequence in our example). It should not clash with any previously defined symbol in the mathematical language available to the theory. </p></li><li><p><b class="bfseries">Syntactic Class</b>: this specifies whether the new operator is an expression operator or a predicate operator. For example, the cardinality operator <img src="images/img-0004.png" alt="$card$" style="vertical-align:0px; 
+                                     width:33px; 
+                                     height:11px" class="math gen" /> is an expression operator of integer type, and the finiteness operator <img src="images/img-0005.png" alt="$finite$" style="vertical-align:-3px; 
+                                     width:44px; 
+                                     height:14px" class="math gen" /> is a predicate operator. In our case, the sequence operator is an expression operator. The button can be toggled off if a predicate operator is required instead. </p></li><li><p><b class="bfseries">Notation</b>: this specifies whether the symbols is a prefix or an infix operator. In the existing mathematical language, <img src="images/img-0017.png" alt="$+$" style="vertical-align:-1px; 
+                                     width:11px; 
+                                     height:12px" class="math gen" /> is an infix operator whereas <img src="images/img-0018.png" alt="$partition$" style="vertical-align:-3px; 
+                                     width:68px; 
+                                     height:14px" class="math gen" /> is a prefix predicate operator. In our example, the sequence operator is specified as prefix. </p></li><li><p><b class="bfseries">Associativity</b>: this specifies whether the operator is associative. Note that this has semantic implications, and as such a proof obligation is generated to check the associativity property. </p></li><li><p><b class="bfseries">Commutativity</b>: this specifies whether the operator is commutative. Note that this has semantic implications, and as such a proof obligation is generated to check the commutativity property. </p></li><li><p><b class="bfseries">Operator Arguments</b>: an operator may have a number of arguments (all of which may be expressions). </p></li><li><p><b class="bfseries">Argument Identifier</b>: this specifies the name of the argument of the operator. It has to be a legal Event-B identifier (similar to carrier sets, constant, variables etc.). </p></li><li><p><b class="bfseries">Argument Type</b>: this specifies the type of the argument. In our case, the sequence operator takes a set of type <img src="images/img-0019.png" alt="$A$" style="vertical-align:0px; 
+                                     width:12px; 
+                                     height:11px" class="math gen" />. Since <img src="images/img-0019.png" alt="$A$" style="vertical-align:0px; 
+                                     width:12px; 
+                                     height:11px" class="math gen" /> is a type parameter, the sequence is polymorphic. </p></li><li><p><b class="bfseries">Direct Definition</b>: this provides the direct definition of the operator. In our case (see the red-boxed field), it asserts that sequences are total functions from a contiguous integer range starting at 1 to the set <img src="images/img-0020.png" alt="$a$" style="vertical-align:0px; 
+                                     width:9px; 
+                                     height:7px" class="math gen" /> the argument of the operator <img src="images/img-0021.png" alt="$seq$" style="vertical-align:-3px; 
+                                     width:24px; 
+                                     height:10px" class="math gen" />. </p></li>
+</ol><p><img src="images/img-0003.png" alt="\includegraphics{images/info.png}" style="width:64px; height:64px" />
+ </p><ul class="itemize">
+<li><p>Only operators that take two arguments of the same type can be tagged as commutative. Of course, then, one has to prove the mathematical property. </p></li><li><p>An operator can be tagged as being associative if it satisfies the three conditions: (1) it is an expression operator, (2) it takes two (or more) arguments of the same type, (3) the type of the operator is the same as that of its arguments. Of course, then, one has to prove the mathematical property. </p></li><li><p>Operators that are tagged associative have to be tagged as infix as well. </p></li><li><p>The argument type can be a type or a set expression. If the argument type is a set expression, then the type of the argument is inferred. Furthermore, the additional restriction (i.e., that the argument belongs to a set expression) is added as a well-definedness condition for the operator. </p></li>
+</ul><p><img src="images/img-0002.png" alt="\includegraphics{images/nike.png}" style="width:64px; height:64px" />
+ </p><ul class="itemize">
+<li><p>As a convention, names of operators should be lower case. </p></li><li><p>As a convention, names of operator arguments should be lower case. </p></li>
+</ul><p>The following operator defines size for sequences. </p><center> <div id="seqOP" class="figure"><p> <img src="images/img-0022.png" alt="\includegraphics{images/SeqSize.png}" style="width:1062px; height:379px" />
+ </p><div class="caption"><b>Figure 8</b>: <span>Sequence Size Operator Definition</span></div></div> </center><p>This definition asserts that the operator <img src="images/img-0023.png" alt="$seqSize$" style="vertical-align:-3px; 
+                                     width:55px; 
+                                     height:14px" class="math gen" /> takes one argument of type <img src="images/img-0024.png" alt="$\mathbb {Z} \leftrightarrow A$" style="vertical-align:0px; 
+                                     width:49px; 
+                                     height:11px" class="math gen" />. This definition, also, triggers a proof obligation to prove the strength of the well-definedness condition provided. Namely, one has to prove that <img src="images/img-0025.png" alt="$\forall s \cdot s \in seq(A) \Longrightarrow finite(s)$" style="vertical-align:-4px; 
+                                     width:207px; 
+                                     height:18px" class="math gen" />. We leave this as an exercise to the reader. </p><p>The following is a definition of a predicate operator: </p><center> <div id="seqOP" class="figure"><p> <img src="images/img-0026.png" alt="\includegraphics{images/SeqIsEmpty.png}" style="width:1204px; height:392px" />
+ </p><div class="caption"><b>Figure 9</b>: <span>Sequence Size Operator Definition</span></div></div> </center><p>The definition of <img src="images/img-0027.png" alt="$seqIsEmpty$" style="vertical-align:-3px; 
+                                     width:90px; 
+                                     height:14px" class="math gen" /> does not trigger any proof obligation for well-definedness strength. This is due to the fact that the corresponding condition is a trivial predicate, namely: <img src="images/img-0028.png" alt="$\forall s \cdot s \in seq(A) \Longrightarrow s \in seq(A)$" style="vertical-align:-4px; 
+                                     width:216px; 
+                                     height:18px" class="math gen" />. </p><p>The head operator on sequences can be defined as follows: </p><center> <div id="seqOP" class="figure"><p> <img src="images/img-0029.png" alt="\includegraphics{images/SeqHead.png}" style="width:1187px; height:444px" />
+ </p><div class="caption"><b>Figure 10</b>: <span>Sequence Head Operator Definition</span></div></div> </center><p>The following figure shows the well-definedness strength proof obligation corresponding to the previous definition of <img src="images/img-0030.png" alt="$seqHead$" style="vertical-align:-3px; 
+                                     width:64px; 
+                                     height:14px" class="math gen" />. </p><center> <div id="seqOP" class="figure"><p> <img src="images/img-0031.png" alt="\includegraphics{images/SeqHeadPO.png}" style="width:284px; height:227px" />
+ </p><div class="caption"><b>Figure 11</b>: <span>Sequence Head WD Strength PO</span></div></div> </center><p>As a summary, have a look at the following caption which is taken from the HTML view of our theory: </p><center> <div id="a0000000012" class="figure"><p> <img src="images/img-0032.png" alt="\includegraphics{images/SeqOperators.png}" style="width:896px; height:541px" />
+ </p><div class="caption"><b>Figure 12</b>: <span>Various Sequence Operators</span></div></div> </center><p>The proof obligations associated with an operator definition are the following: </p><ol class="enumerate">
+<li><p><b class="bfseries">./Op-WD</b> operator well-definedness strength if a well-definedness condition is explicitly specified. </p></li><li><p><b class="bfseries">./Op-COMMUT</b> the commutativity proof obligation, generated if the operator is tagged as commutative. </p></li><li><p><b class="bfseries">./Op-ASSOC</b> the associativity proof obligation, generated if the operator is tagged as associative. </p></li>
+</ol></div>
+
+
+
+
+
+<div class="navigation">
+<span>Previous: <a href="typePar.html">Add a Type Parameter</a></span>
+<span>Next: <a href="theoremEx.html">Specify a Polymorphic Theorem</a></span>
+<span>Up: <a href="quickStart.html">Quick Start</a></span>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eventb.theory.sdk"
+      label="%featureName"
+      version="4.0.0.qualifier"
+      provider-name="%featureVendor"
+      license-feature="org.rodinp.license"
+      license-feature-version="1.0.0.release">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <url>
+      <discovery label="%theoryWikiSiteName" url="http://wiki.event-b.org/index.php/Theory_News_and_Support"/>
+   </url>
+
+   <includes
+         id="org.eventb.theory.feature"
+         version="0.0.0"/>
+
+   <requires>
+      <import plugin="org.eventb.core.ast.extensions"/>
+      <import plugin="org.eventb.core.ast"/>
+      <import plugin="org.junit"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eventb.theory.core"/>
+      <import plugin="org.rodinp.core"/>
+      <import plugin="org.eventb.core"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.junit"/>
+      <import plugin="org.eventb.core.seqprover.tests"/>
+      <import plugin="org.eventb.core.seqprover"/>
+      <import plugin="org.eventb.core.ast"/>
+      <import plugin="ch.ethz.eventb.utils"/>
+      <import plugin="org.eventb.core"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eventb.theory.core"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eventb.theory.rbp"/>
+   </requires>
+
+   <plugin
+         id="org.eventb.core.ast.extensions.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eventb.theory.core.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eventb.theory.tests.rbp"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eventb.core.ast.extensions.source"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eventb.core.ast.extensions.tests.source"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eventb.theory.branding.source"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eventb.theory.core.source"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eventb.theory.core.tests.source"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eventb.theory.help.source"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eventb.theory.keyboard.source"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eventb.theory.rbp.source"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eventb.theory.tests.rbp.source"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eventb.theory.ui.source"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

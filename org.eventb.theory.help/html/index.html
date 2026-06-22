@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="shortcut icon" href="icons/pyfav.png" type="image/png" />
+<link href="index.html" title="Theory Plug-in User Manual" rel="start" />
+<link href="index.html" title="Theory Plug-in User Manual" rel="first" />
+<link href="index.html" rel="contents" title="Contents" />
+<link rel="index" title="Index" />
+<link href="sect0001.html" rel="next" />
+
+
+<meta name="aesop" content="information" />
+<title>Theory Plug-in User Manual</title>
+</head>
+<body>
+<div class="navigation">
+<div id="top-navigation-panel" xml:id="top-navigation-panel">
+<table align="center" width="100%" cellpadding="0" cellspacing="2">
+<tr>
+<td class="online-navigation"><img src="icons/blank.png" width="32" height="32" border="0" /></td>
+<td class="online-navigation"><img src="icons/blank.png" width="32" height="32" border="0" /></td>
+<td class="online-navigation"><a title="Motivation" href="sect0001.html" rel="next"><img src="icons/next.png" border="0" height="32" alt="Next Page" width="32" /></a></td>
+<td align="center" width="100%">Theory Plug-in User Manual</td>
+<td class="online-navigation"><a href="index.html" rel="contents" title="Table of Contents"><img src="icons/contents.png" border="0" height="32" alt="Contents" width="32" /></a></td>
+<td class="online-navigation"><img src="icons/blank.png" border="0" height="32" alt="" width="32" /></td>
+<td class="online-navigation"><img src="icons/blank.png" border="0" height="32" width="32" /></td>
+</tr></table>
+<div class="online-navigation">
+
+
+<span><b class="navlabel">Next:</b>
+<a href="sect0001.html" class="sectref" rel="next">Motivation</a></span>
+</div>
+<hr /></div>
+</div>
+
+<div><div class="titlepage">
+<h1>Theory Plug-in User Manual</h1>
+<p>University of Southampton</p>
+<p>July 8, 2011</p>
+
+</div><p>The Theory plug-in is a contribution to the Rodin platform that facilitates the specification, validation and deployment of language and prover extensions for Event-B. Language extensions are contributions to the Event-B language in the form of operators (both predicate and expression) and datatype definitions. Prover extensions are contributions to the Event-B proving infrastructure in the form of rewrite rules, inference rules and polymorphic theorems. The Theory plug-in provides an Event-B component (similar to contexts and machines) called <i class="itshape">theory</i> <img src="images/img-0001.png" alt="\includegraphics{thy.png}" style="width:16px; height:16px" />
+ that can be used to define operators, datatypes and rules. Proof obligations are generated to validate semantic properties of extensions to ensure <i class="itshape">logical conservativity</i>. The Theory plug-in is the successor of the <b class="bfseries">Rule-based Prover</b> (which will be referred to as RbP) plug-in. The following sections provide a concise description of the functionality of the plug-in. </p><p>For a quick start guide, the user can skip to Section <a href="quickStart.html">3</a>. </p><p><img src="images/img-0002.png" alt="\includegraphics{nike.png}" style="width:64px; height:64px" />
+ The Rule-based Prover only supported rewrite rules, and is superseded by the Theory plug-in. </p><p><img src="images/img-0003.png" alt="\includegraphics{info.png}" style="width:64px; height:64px" />
+ The Event-B <b class="bfseries">mathematical language</b> refers to the language used to write axioms, invariants, guards etc. in Event-B models. </p><p><img src="images/img-0003.png" alt="\includegraphics{info.png}" style="width:64px; height:64px" />
+ <b class="bfseries">Language extensions</b> refer to new operators and new datatypes. </p><p><img src="images/img-0003.png" alt="\includegraphics{info.png}" style="width:64px; height:64px" />
+ <b class="bfseries">Prover extensions</b> refer to new rewrite rules, inference rules and polymorphic theorems that can be made available to the Event-B prover. </p></div>
+
+<div class="contents">
+<hr />
+<ul>
+<li><a href="sect0001.html">1 Motivation</a>
+   
+</li><li><a href="sect0002.html">2 Capabilities</a>
+   
+</li><li><a href="quickStart.html">3 Quick Start</a>
+   <ul>
+   <li><a href="sect0003.html">3.1 Install Theory Plug-in</a>
+       
+   </li><li><a href="explorerNTB.html">3.2 Create A New Theory</a>
+       
+   </li><li><a href="typePar.html">3.3 Add a Type Parameter</a>
+       
+   </li><li><a href="seqOP.html">3.4 Create an Operator Definition</a>
+       
+   </li><li><a href="theoremEx.html">3.5 Create a Polymorphic Theorem</a>
+       
+   </li><li><a href="sect0004.html">3.6 Deploy Theory</a>
+       
+   </li><li><a href="sect0005.html">3.7 Use Theory</a>
+       
+   </li>
+   </ul>
+</li><li><a href="sect0006.html">4 Scoping of Theories</a>
+   
+</li><li><a href="sect0007.html">5 Examples</a>
+   <ul>
+   <li><a href="Sequence.html">5.1 Sequence</a>
+       
+   </li><li><a href="List.html">5.2 List</a>
+       
+   </li>
+   </ul>
+</li>
+
+
+
+</ul>
+</div>
+
+<div class="navigation">
+<div class="online-navigation">
+<hr />
+<table align="center" width="100%" cellpadding="0" cellspacing="2">
+<tr>
+<td class="online-navigation"><img src="icons/blank.png" width="32" height="32" border="0" /></td>
+<td class="online-navigation"><img src="icons/blank.png" width="32" height="32" border="0" /></td>
+<td class="online-navigation"><a title="Motivation" href="sect0001.html" rel="next"><img src="icons/next.png" border="0" height="32" alt="Next Page" width="32" /></a></td>
+<td align="center" width="100%">Theory Plug-in User Manual</td>
+<td class="online-navigation"><a href="index.html" rel="contents" title="Table of Contents"><img src="icons/contents.png" border="0" height="32" alt="Contents" width="32" /></a></td>
+<td class="online-navigation"><img src="icons/blank.png" border="0" height="32" alt="" width="32" /></td>
+<td class="online-navigation"><img src="icons/blank.png" border="0" height="32" width="32" /></td>
+</tr></table>
+<div class="online-navigation">
+
+
+<span><b class="navlabel">Next:</b>
+<a href="sect0001.html" class="sectref" rel="next">Motivation</a></span>
+</div>
+</div>
+<hr />
+<!--
+<span class="release-info">Release 2.4.3, documentation updated on 29 March 2006.</span>
+-->
+</div>
+<!--End of Navigation Panel-->
+<!--
+<address>
+See <i><a href="about.html">About this document...</a></i> for information on suggesting changes.
+</address>
+-->
+</body>
+</html>

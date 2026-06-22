@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>Specify a Polymorphic Theorem</title>
+<link href="blockEx.html" title="Specify an Inference Rule" rel="next" />
+<link href="seqOP.html" title="Create an Operator Definition" rel="prev" />
+<link href="quickStart.html" title="Quick Start" rel="up" />
+<link rel="stylesheet" href="styles/plastex-styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<span>Previous: <a href="seqOP.html">Create an Operator Definition</a></span>
+<span>Next: <a href="blockEx.html">Specify an Inference Rule</a></span>
+<span>Up: <a href="quickStart.html">Quick Start</a></span>
+</div>
+
+<div><h2 id="theoremEx">3.5 Specify a Polymorphic Theorem</h2>
+<p> A polymorphic theorem is no different, in principle, from theorems defined in contexts and machines. The Theory plug-in, however, provides facilities to instantiate and use these theorems in proofs. See the example below. </p><center> <div id="a0000000013" class="figure"><p> <img src="images/img-0033.png" alt="\includegraphics{images/Theorem.png}" style="width:553px; height:86px" />
+ </p><div class="caption"><b>Figure 13</b>: <span>Sequence Finiteness Theorem</span></div></div> </center><p>The previous theorem articulates the fact the sequences as specified in our example are finite. As with theorems in contexts and machines, you have to prove validity and well-definedness of the theorem. The proof obligations associated with a theorem are the following: </p><ol class="enumerate">
+<li><p><b class="bfseries">./S-THM</b> the validity proof obligation. </p></li><li><p><b class="bfseries">./WD-THM</b> the well-definedness proof obligation. </p></li>
+</ol><p>The following figure shows other theorems that can be defined in relation to our theory of sequences so far: </p><center> <div id="a0000000014" class="figure"><p> <img src="images/img-0034.png" alt="\includegraphics{images/Theorems.png}" style="width:604px; height:122px" />
+ </p><div class="caption"><b>Figure 14</b>: <span>Sequence Theorems</span></div></div> </center><p><img src="images/img-0002.png" alt="\includegraphics{images/nike.png}" style="width:64px; height:64px" />
+ A theorem can be instantiated (e.g., in the previous example, the type parameter <img src="images/img-0019.png" alt="$A$" style="vertical-align:0px; 
+                                     width:12px; 
+                                     height:11px" class="math gen" /> can be substituted with a type expression that is acceptable in the context of the sequent under consideration). We will later show how this is achieved. </p></div>
+
+
+
+
+
+<div class="navigation">
+<span>Previous: <a href="seqOP.html">Create an Operator Definition</a></span>
+<span>Next: <a href="blockEx.html">Specify an Inference Rule</a></span>
+<span>Up: <a href="quickStart.html">Quick Start</a></span>
+</div>
+
+</body>
+</html>

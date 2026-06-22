@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>Specify an Inference Rule</title>
+<link href="sect0004.html" title="Scoping of Theories" rel="next" />
+<link href="theoremEx.html" title="Specify a Polymorphic Theorem" rel="prev" />
+<link href="quickStart.html" title="Quick Start" rel="up" />
+<link rel="stylesheet" href="styles/plastex-styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<span>Previous: <a href="theoremEx.html">Specify a Polymorphic Theorem</a></span>
+<span>Next: <a href="sect0004.html">Scoping of Theories</a></span>
+<span>Up: <a href="quickStart.html">Quick Start</a></span>
+</div>
+
+<div><h2 id="blockEx">3.6 Specify an Inference Rule</h2>
+<p> Inference rules are proof rules that can be used to: (1) infer new hypotheses in a proof, or (2) split the goal into sub-goals, or (3) discharge a proof obligation. The general structure of an inference rule is as follows: </p><table id="a0000000015" cellpadding="7" width="100%" cellspacing="0" class="eqnarray">
+<tr id="a0000000016">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0035.png" alt="$\displaystyle  $" style="vertical-align:0px; width:1px;                     height:1px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0036.png" alt="$\displaystyle Given $" style="vertical-align:0px; width:45px;                     height:11px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0035.png" alt="$\displaystyle  $" style="vertical-align:0px; width:1px;                     height:1px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum">&nbsp;</td>
+</tr><tr id="a0000000017">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0035.png" alt="$\displaystyle  $" style="vertical-align:0px; width:1px;                     height:1px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0037.png" alt="$\displaystyle ~ ~ ~ ~ ~  $" style="vertical-align:0px; width:1px;                     height:1px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0038.png" alt="$\displaystyle G0,~ ...,~ Gn  $" style="vertical-align:-3px; width:84px;                     height:15px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum">&nbsp;</td>
+</tr><tr id="a0000000018">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0035.png" alt="$\displaystyle  $" style="vertical-align:0px; width:1px;                     height:1px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0039.png" alt="$\displaystyle Infer $" style="vertical-align:-3px; width:44px;                     height:14px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0035.png" alt="$\displaystyle  $" style="vertical-align:0px; width:1px;                     height:1px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum">&nbsp;</td>
+</tr><tr id="a0000000019">
+    
+    <td style="width:40%">&nbsp;</td>
+    
+    
+        <td style="vertical-align:middle;                                    text-align:right"><img src="images/img-0035.png" alt="$\displaystyle  $" style="vertical-align:0px; width:1px;                     height:1px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:center"><img src="images/img-0037.png" alt="$\displaystyle ~ ~ ~ ~ ~  $" style="vertical-align:0px; width:1px;                     height:1px" class="math gen" /></td>
+    
+    
+    
+        <td style="vertical-align:middle;                                    text-align:left"><img src="images/img-0040.png" alt="$\displaystyle I  $" style="vertical-align:0px; width:9px;                     height:11px" class="math gen" /></td>
+    
+    
+    
+    <td style="width:40%">&nbsp;</td>
+    <td style="width:20%" class="eqnnum">&nbsp;</td>
+</tr>
+</table><p>where each of <img src="images/img-0041.png" alt="$G0, ..., Gn$" style="vertical-align:-3px; 
+                                     width:73px; 
+                                     height:15px" class="math gen" /> and <img src="images/img-0042.png" alt="$I$" style="vertical-align:0px; 
+                                     width:9px; 
+                                     height:11px" class="math gen" /> is an Event-B predicate. The above inference rule can be read in the following two ways : "given conditions <img src="images/img-0043.png" alt="$G0$" style="vertical-align:0px; 
+                                     width:21px; 
+                                     height:12px" class="math gen" />, ..., <img src="images/img-0044.png" alt="$Gn$" style="vertical-align:0px; 
+                                     width:23px; 
+                                     height:11px" class="math gen" />  one can infer <img src="images/img-0042.png" alt="$I$" style="vertical-align:0px; 
+                                     width:9px; 
+                                     height:11px" class="math gen" />", and "one can prove <img src="images/img-0042.png" alt="$I$" style="vertical-align:0px; 
+                                     width:9px; 
+                                     height:11px" class="math gen" />, if one can prove each of <img src="images/img-0043.png" alt="$G0$" style="vertical-align:0px; 
+                                     width:21px; 
+                                     height:12px" class="math gen" />, ..., <img src="images/img-0044.png" alt="$Gn$" style="vertical-align:0px; 
+                                     width:23px; 
+                                     height:11px" class="math gen" />". </p><p>Inference rules can be defined as part of a block of "Proof Rules". Each proof rules block may contain a number of metavariables, rewrite rules and inference rules. To create a rules block, under the heading "PROOF RULES" in the structured editor, press <img src="images/img-0011.png" alt="\includegraphics{images/add.png}" style="width:16px; height:16px" />
+. </p><center> <div id="metavarEx" class="figure"><p> <img src="images/img-0045.png" alt="\includegraphics{images/Block.png}" style="width:441px; height:222px" />
+ </p><div class="caption"><b>Figure 15</b>: <span>Proof Rules Block</span></div></div> </center><p>Metavariables define the variables used to specify proof rules. Each metavariable has a name and a type. For our example, we need one metavariable <img src="images/img-0046.png" alt="$s$" style="vertical-align:0px; 
+                                     width:7px; 
+                                     height:7px" class="math gen" />. </p><center> <div id="infEx" class="figure"><p> <img src="images/img-0047.png" alt="\includegraphics{images/Metavar.png}" style="width:280px; height:92px" />
+ </p><div class="caption"><b>Figure 16</b>: <span>Defining a Metavariable</span></div></div> </center><p>The following example shows an inference rule concerning finiteness of sequences: </p><center> <div id="infTEx" class="figure"><p> <img src="images/img-0048.png" alt="\includegraphics{images/Inference.png}" style="width:786px; height:319px" />
+ </p><div class="caption"><b>Figure 17</b>: <span>Sequence Finiteness Inference Rule</span></div></div> </center><p>The applicability of a proof rule indicates whether the rule should be applied automatically or interactively. The description provides a human-readable view of the rule. The description provided will be the tool tip for the rule in the proof UI. The following inference rule is an automatic rule that states that the tail of a non-empty sequence is a sequence. </p><center> <div id="a0000000020" class="figure"><p> <img src="images/img-0049.png" alt="\includegraphics{images/TailInference.png}" style="width:691px; height:293px" />
+ </p><div class="caption"><b>Figure 18</b>: <span>Sequence Tail Inference Rule</span></div></div> </center></div>
+
+
+
+
+
+<div class="navigation">
+<span>Previous: <a href="theoremEx.html">Specify a Polymorphic Theorem</a></span>
+<span>Next: <a href="sect0004.html">Scoping of Theories</a></span>
+<span>Up: <a href="quickStart.html">Quick Start</a></span>
+</div>
+
+</body>
+</html>

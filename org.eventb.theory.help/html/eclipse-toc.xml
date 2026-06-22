@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<toc label="Theory Plug-in User Manual" topic="html/index.html">
+    <topic label="Motivation" href="html/sect0001.html" /><topic label="Capabilities" href="html/sect0002.html" /><topic label="Quick Start" href="html/quickStart.html">
+       <topic label="Install Theory Plug-in" href="html/sect0003.html" /><topic label="Create A New Theory" href="html/explorerNTB.html" /><topic label="Add a Type Parameter" href="html/typePar.html" /><topic label="Create an Operator Definition" href="html/seqOP.html" /><topic label="Create a Polymorphic Theorem" href="html/theoremEx.html" /><topic label="Deploy Theory" href="html/sect0004.html" /><topic label="Use Theory" href="html/sect0005.html" />
+    </topic><topic label="Scoping of Theories" href="html/sect0006.html" /><topic label="Examples" href="html/sect0007.html">
+       <topic label="Sequence" href="html/Sequence.html" /><topic label="List" href="html/List.html" />
+    </topic>
+</toc>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde?>
+<target includeMode="feature" name="Theory plug-in">
+	<locations>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<repository location="http://download.eclipse.org/eclipse/updates/4.16"/>
+			<unit id="org.eclipse.jdt.junit4.runtime" version="0.0.0"/>
+			<unit id="org.eclipse.pde.junit.runtime" version="0.0.0"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<repository location="jar:file:/var/tmp/org.rodinp.dev-3.5.0-9f39f1653.zip!/"/>
+			<unit id="org.eventb.ide.source.feature.group" version="0.0.0"/>
+			<unit id="org.rodinp.platform.tests.source.feature.group" version="0.0.0"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<repository location="http://rodin-b-sharp.sourceforge.net/updates"/>
+			<unit id="ch.ethz.eventb.utils" version="0.0.0"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<repository location="http://eventb-soton.github.io/media_bin/org.rodinp.licence.updateSite"/>
+			<unit id="org.rodinp.licence.feature.group" version="0.0.0"/>
+		</location>
+	</locations>
+</target>

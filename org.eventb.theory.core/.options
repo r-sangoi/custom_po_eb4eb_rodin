@@ -1,0 +1,2 @@
+org.eventb.theory.core/debug = true
+org.eventb.theory.core/debug/wksp_exts_mng = false

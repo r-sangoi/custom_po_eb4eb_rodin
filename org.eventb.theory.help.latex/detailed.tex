@@ -1,0 +1,70 @@
+\section{Anatomy of Theories} \label{anatomy}
+\subsection{Type Parameters}
+Type parameters are subject to the following static checks:
+\begin{table}
+	\begin{center}
+		\begin{tabular}{|l|l|}
+			\hline
+			\textbf{Error} & \textbf{Fix}\\
+			\hline
+			\textit{Invalid identifier \$1} & Make sure the identifier string is an acceptable Event-B identifier.\\
+			\hline
+			\textit{Identifier \$1 must not have leading or trailing spaces} & Remove any leading or trailing spaces.\\
+			\hline
+			\textit{Identifier name missing} & Make sure the identifier attribute is present. This usually happens when editing with an editor other than the form, Camille or the Rodin editor.\\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\subsection{Datatype Definitions}
+Datatype definitions are subject to the following static checks:
+\begin{table}
+	\begin{center}
+		\begin{tabular}{|l|l|}
+			\hline
+			\textbf{Error} & \textbf{Fix}\\
+			\hline
+			\textit{Invalid identifier \$1} & Make sure the datatype name is an acceptable Event-B identifier.\\
+			\hline
+			\textit{Identifier \$1 must not have leading or trailing spaces} & Remove any leading or trailing spaces.\\
+			\hline
+			\textit{Missing datatype name} & Make sure the identifier attribute (i.e., the datatype name) is present. This usually happens when editing with an editor other than the form, Camille or the Rodin editor.\\
+			\hline
+			\textit{Identifier \$1 is an existing datatype name} & The datatype/constructor/destructor name is already a datatype name. Make sure you use a different identifier string. This usually indicates that a clash happened between locally (within the same theory) defined datatypes.\\
+			\hline
+			\textit{Identifier \$1 is an existing datatype constructor/destructor name} & See above.\\
+			\hline
+			\textit{Datatype \$1 name is a type parameter} & The datatype name clashes with a type parameter. Type in a different identifier string.\\
+			\hline
+			\textit{Datatype \$1 has no element constructors} & The datatype has to have at least one element constructor.\\
+			\hline
+			\textit{Datatype \$1 has no base constructors} & The datatype has to declare a base constructor whose destructors are of types that do not refer to the datatype being declared.\\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+
+\subsection{Operator Definitions}
+Operator definitions are subject to the following static checks:
+
+\subsection{Polymorphic Theorems}
+Theorems are subject to the following static checks:
+
+\subsection{Proof Rules}
+Proof rule blocks are subject to the following static checks:
+
+\subsubsection{Metavariables}
+Metavariables are subject to the following static checks:
+
+\subsubsection{Rewrite Rules}
+Rewrite rules are subject to the following static checks:
+
+\subsubsection{Inference Rules}
+Inference rules are subject to the following static checks:
+
+\section{Structuring Theories} \label{structuring}
+
+\subsection{IMPORT Directive}
+Import directives are subject to the following static checks:

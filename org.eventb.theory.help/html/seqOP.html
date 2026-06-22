@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="shortcut icon" href="icons/pyfav.png" type="image/png" />
+<link href="index.html" title="Theory Plug-in User Manual" rel="start" />
+<link href="index.html" title="Theory Plug-in User Manual" rel="first" />
+<link href="index.html" rel="contents" title="Contents" />
+<link rel="index" title="Index" />
+<link href="theoremEx.html" rel="next" />
+<link href="typePar.html" rel="prev" />
+<link href="quickStart.html" rel="parent" />
+<meta name="aesop" content="information" />
+<title>3.4 Create an Operator Definition</title>
+</head>
+<body>
+<div class="navigation">
+<div id="top-navigation-panel" xml:id="top-navigation-panel">
+<table align="center" width="100%" cellpadding="0" cellspacing="2">
+<tr>
+<td class="online-navigation"><a title="3.3 Add a Type Parameter" href="typePar.html" rel="prev"><img src="icons/previous.png" border="0" height="32" alt="Previous Page" width="32" /></a></td>
+<td class="online-navigation"><a title="3 Quick Start" href="quickStart.html" rel="parent"><img src="icons/up.png" border="0" height="32" alt="Up One Level" width="32" /></a></td>
+<td class="online-navigation"><a title="Create a Polymorphic Theorem" href="theoremEx.html" rel="next"><img src="icons/next.png" border="0" height="32" alt="Next Page" width="32" /></a></td>
+<td align="center" width="100%">Theory Plug-in User Manual</td>
+<td class="online-navigation"><a href="index.html" rel="contents" title="Table of Contents"><img src="icons/contents.png" border="0" height="32" alt="Contents" width="32" /></a></td>
+<td class="online-navigation"><img src="icons/blank.png" border="0" height="32" alt="" width="32" /></td>
+<td class="online-navigation"><img src="icons/blank.png" border="0" height="32" width="32" /></td>
+</tr></table>
+<div class="online-navigation">
+<span><b class="navlabel">Previous:</b>
+<a href="typePar.html" class="sectref" rel="prev">Add a Type Parameter</a></span>
+<span><b class="navlabel">Up:</b>
+<a href="quickStart.html" class="sectref" rel="parent">Quick Start</a></span>
+<span><b class="navlabel">Next:</b>
+<a href="theoremEx.html" class="sectref" rel="next">Create a Polymorphic Theorem</a></span>
+</div>
+<hr /></div>
+</div>
+
+
+
+<div><h2 id="seqOP">3.4 Create an Operator Definition</h2>
+<p> Event-B mathematical language has many useful operators. Examples include cardinality operator <img src="images/img-0004.png" alt="$card$" style="vertical-align:0px; 
+                                     width:33px; 
+                                     height:11px" class="math gen" />, the finiteness predicate operator <img src="images/img-0005.png" alt="$finite$" style="vertical-align:-3px; 
+                                     width:44px; 
+                                     height:14px" class="math gen" /> and the function application <img src="images/img-0012.png" alt="$.(.)$" style="vertical-align:-4px; 
+                                     width:20px; 
+                                     height:18px" class="math gen" />. Other useful operators can be defined using the Theory plug-in. The following figure shows a definition of a sequence operator. </p><center> <div id="a0000000011" class="figure"><p> <img src="images/img-0013.png" alt="\includegraphics{SeqOperator.png}" style="width:1020px; height:466px" />
+ </p><div class="caption"><b>Figure 5</b>: <span>Sequence Operator Definition</span></div></div> </center><p>Note the numbering in the above picture. The following explains each part of the definition: </p><ol class="enumerate">
+<li><p><b class="bfseries">Syntax Symbol</b>: this specifies the syntax token that will be reserved for the new operator (sequence in our example). It should not clash with any previously defined symbol in the mathematical language available to the theory. </p></li><li><p><b class="bfseries">Syntactic Class</b>: this specifies whether the new operator is an expression operator or a predicate operator. For example, the cardinality operator <img src="images/img-0004.png" alt="$card$" style="vertical-align:0px; 
+                                     width:33px; 
+                                     height:11px" class="math gen" /> is an expression operator of integer type, and the finiteness operator <img src="images/img-0005.png" alt="$finite$" style="vertical-align:-3px; 
+                                     width:44px; 
+                                     height:14px" class="math gen" /> is a predicate operator. In our case, the sequence operator is an expression operator. The button can be toggled off if a predicate operator is required instead. </p></li><li><p><b class="bfseries">Notation</b>: this specifies whether the symbols is a prefix or an infix operator. In the existing mathematical language, <img src="images/img-0014.png" alt="$+$" style="vertical-align:-1px; 
+                                     width:11px; 
+                                     height:12px" class="math gen" /> is an infix operator whereas <img src="images/img-0015.png" alt="$partition$" style="vertical-align:-3px; 
+                                     width:68px; 
+                                     height:14px" class="math gen" /> is a prefix predicate operator. In our example, the sequence operator is specified as prefix. </p></li><li><p><b class="bfseries">Associativity</b>: this specifies whether the operator is associative. Note that this has semantic implications, and as such a proof obligation is generated to check the associativity property. </p></li><li><p><b class="bfseries">Commutativity</b>: this specifies whether the operator is commutative. Note that this has semantic implications, and as such a proof obligation is generated to check the commutativity property. </p></li><li><p><b class="bfseries">Operator Arguments</b>: an operator may have a number of arguments (all of which may be expressions). </p></li><li><p><b class="bfseries">Argument Identifier</b>: this specifies the name of the argument of the operator. It has to be a legal Event-B identifier (similar to carrier sets, constant, variables etc.). </p></li><li><p><b class="bfseries">Argument Type</b>: this specifies the type of the argument. In our case, the sequence operator takes a set of type <img src="images/img-0016.png" alt="$A$" style="vertical-align:0px; 
+                                     width:12px; 
+                                     height:11px" class="math gen" />. Since <img src="images/img-0016.png" alt="$A$" style="vertical-align:0px; 
+                                     width:12px; 
+                                     height:11px" class="math gen" /> is a type parameter, the sequence is polymorphic. </p></li><li><p><b class="bfseries">Direct Definition</b>: this provides the direct definition of the operator. In our case (see the red-boxed field), it asserts that sequences are total functions from a contiguous integer range starting at 1 to the set <img src="images/img-0017.png" alt="$a$" style="vertical-align:0px; 
+                                     width:9px; 
+                                     height:7px" class="math gen" /> the argument of the operator <img src="images/img-0018.png" alt="$seq$" style="vertical-align:-3px; 
+                                     width:24px; 
+                                     height:10px" class="math gen" />. </p></li>
+</ol><p>The proof obligations associated with an operator definition are the following: </p><ol class="enumerate">
+<li><p><b class="bfseries">./Op-WD</b> operator well-definedness strength if a well-definedness condition is explicitly specified. </p></li><li><p><b class="bfseries">./Op-COMMUT</b> the commutativity proof obligation, generated if the operator is tagged as commutative. </p></li><li><p><b class="bfseries">./Op-ASSOC</b> the associativity proof obligation, generated if the operator is tagged as associative. </p></li>
+</ol></div>
+
+
+
+<div class="navigation">
+<div class="online-navigation">
+<hr />
+<table align="center" width="100%" cellpadding="0" cellspacing="2">
+<tr>
+<td class="online-navigation"><a title="3.3 Add a Type Parameter" href="typePar.html" rel="prev"><img src="icons/previous.png" border="0" height="32" alt="Previous Page" width="32" /></a></td>
+<td class="online-navigation"><a title="3 Quick Start" href="quickStart.html" rel="parent"><img src="icons/up.png" border="0" height="32" alt="Up One Level" width="32" /></a></td>
+<td class="online-navigation"><a title="Create a Polymorphic Theorem" href="theoremEx.html" rel="next"><img src="icons/next.png" border="0" height="32" alt="Next Page" width="32" /></a></td>
+<td align="center" width="100%">Theory Plug-in User Manual</td>
+<td class="online-navigation"><a href="index.html" rel="contents" title="Table of Contents"><img src="icons/contents.png" border="0" height="32" alt="Contents" width="32" /></a></td>
+<td class="online-navigation"><img src="icons/blank.png" border="0" height="32" alt="" width="32" /></td>
+<td class="online-navigation"><img src="icons/blank.png" border="0" height="32" width="32" /></td>
+</tr></table>
+<div class="online-navigation">
+<span><b class="navlabel">Previous:</b>
+<a href="typePar.html" class="sectref" rel="prev">Add a Type Parameter</a></span>
+<span><b class="navlabel">Up:</b>
+<a href="quickStart.html" class="sectref" rel="parent">Quick Start</a></span>
+<span><b class="navlabel">Next:</b>
+<a href="theoremEx.html" class="sectref" rel="next">Create a Polymorphic Theorem</a></span>
+</div>
+</div>
+<hr />
+<!--
+<span class="release-info">Release 2.4.3, documentation updated on 29 March 2006.</span>
+-->
+</div>
+<!--End of Navigation Panel-->
+<!--
+<address>
+See <i><a href="about.html">About this document...</a></i> for information on suggesting changes.
+</address>
+-->
+</body>
+</html>

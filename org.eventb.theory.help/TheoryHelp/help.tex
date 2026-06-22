@@ -1,0 +1,55 @@
+% This is a sample LaTeX input file.  (Version of 11 April 1994.)
+%
+% A '%' character causes TeX to ignore all remaining text on the line,
+% 2400ff
+% and is used for comments like this one.
+
+\documentclass{article}      % Specifies the document class 
+\usepackage{graphics, amsmath}
+\usepackage{hyperref}
+                             % The preamble begins here.
+\title{Theory Plug-in User Manual}  % Declares the document's title.
+\author{University of Southampton}      % Declares the author's name.
+\date{\today}      
+
+\begin{document}             % End of preamble and beginning of text.
+
+\maketitle
+The Theory plug-in is a contribution to the Rodin platform that facilitates the specification, validation and deployment of language and prover extensions for Event-B. Language extensions are contributions to the Event-B language in the form of operators (both predicate and expression) and datatype definitions. Prover extensions are contributions to the Event-B proving infrastructure in the form of rewrite rules, inference rules and polymorphic theorems. The Theory plug-in provides an Event-B component (similar to contexts and machines) called 
+\textit{theory} \includegraphics{images/thy.png} that can be used to define operators, datatypes and rules. Proof obligations are generated to validate semantic properties of extensions to ensure \textit{logical conservativity}. The Theory plug-in is the successor of the \textbf{Rule-based Prover} (which will be referred to as RbP) plug-in. The following sections provide a concise description of the functionality of the plug-in. 
+\par
+For a quick start guide, the user can skip to Section \ref{quickStart}.
+
+\includegraphics{images/nike.png} The Rule-based Prover only supported rewrite rules, and is superseded  by the Theory plug-in.
+
+\includegraphics{images/info.png} 
+\begin{itemize}
+	\item The Event-B \textbf{mathematical language} refers to the language used to write axioms, invariants, guards etc. in Event-B models.
+	\item \textbf{Language extensions} refer to new operators and new datatypes.
+	\item \textbf{Prover extensions} refer to new rewrite rules, inference rules and polymorphic theorems that can be made available to the Event-B prover.
+\end{itemize}
+
+\section{Motivation}
+Up to Rodin v2.0, the mathematical language used in Event-B has been fixed. As such, it was not possible to define reusable polymorphic operators. A workaround was to define any required operators as set constructs in contexts. Originally, contexts were supposed to provide a parametrization of machines. The aforementioned limitations of the Event-B language lead to users to use contexts for purposes for which they were not intentionally devised. Examples of operators that can be useful to users include the sequence operator (which was present in classical B mathematical language) and the bag operator.
+\par
+In Rodin v2.0, support for customised syntactic symbols was introduced. The Theory plug-in, as a result, evolved from being just a component to define rewrite rules to a versatile platform to define and validate proof and language extensions.
+
+\section{Capabilities}
+The Theory plug-in has the following capabilities:
+\begin{enumerate}
+	\item \textbf{\textit{Theory Definition:}}
+		\begin{enumerate}
+			\item Definition of \textbf{datatypes}: datatypes are defined by supplying the types on which they are polymorphic, a set of constructors one of which has to be a base constructor. Each constructor may or may not have destructors.
+			\item Definition of \textbf{operators}: operators can be defined as predicate or expression operators. An expression operator is an operator that "returns" an expression, an example existing operator is $card$. A predicate operator is one that "returns" a predicate, an example existing predicate operator is $finite$.
+			\item Definition of \textbf{rewrite rules}: rewrite rules are one-directional equalities that can be applied from left to right. The Theory plug-in can be used to define rewrite rules.
+			\item Definition of \textbf{inference rules}: inference rules can be used to infer new hypotheses, split a goal into sub-goals or discharge sequents.
+			\item Definition of \textbf{polymorphic theorems}: theorems can be defined and validated once, and can then be imported into sequents of proof obligations if a suitable type instantiation is available.
+			\item \textbf{Validation of extensions}: where appropriate, proof obligations are generated to ensure soundness of extensions. This includes, proof obligations for validity of inference and rewrite rules, as well as proof obligations to validate operator properties such as associativity and commutativity.
+		\end{enumerate}
+	\item \textbf{\textit{Theory Deployment:}} this step signifies that a theory is ready for use. Theories can be deployed after they have been optionally validated by the user. It is strongly advisable to discharge all proof obligations before deployment.
+\end{enumerate}
+Once a theory has been deployed to its designated project, all its extensions (mathematical and prover extensions) can be used in models. In later sections, we show the two different scopes of theory availability.
+\include{quick}
+\include{scope}
+\include{examples}
+\end{document}               % End of document.

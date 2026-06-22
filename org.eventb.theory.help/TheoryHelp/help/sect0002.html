@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<title>Capabilities</title>
+<link href="quickStart.html" title="Quick Start" rel="next" />
+<link href="sect0001.html" title="Motivation" rel="prev" />
+<link href="index.html" title="Theory Plug-in User Manual" rel="up" />
+<link rel="stylesheet" href="styles/plastex-styles.css" />
+</head>
+<body>
+
+<div class="navigation">
+<span>Previous: <a href="sect0001.html">Motivation</a></span>
+<span>Next: <a href="quickStart.html">Quick Start</a></span>
+<span>Up: <a href="index.html">Theory Plug-in User Manual</a></span>
+</div>
+
+<div><h1 id="a0000000003">2 Capabilities</h1>
+<p> The Theory plug-in has the following capabilities: </p><ol class="enumerate">
+<li><p><b class="bfseries"><i class="itshape">Theory Definition:</i></b> </p><ol class="enumerate">
+<li><p>Definition of <b class="bfseries">datatypes</b>: datatypes are defined by supplying the types on which they are polymorphic, a set of constructors one of which has to be a base constructor. Each constructor may or may not have destructors. </p></li><li><p>Definition of <b class="bfseries">operators</b>: operators can be defined as predicate or expression operators. An expression operator is an operator that "returns" an expression, an example existing operator is <img src="images/img-0004.png" alt="$card$" style="vertical-align:0px; 
+                                     width:33px; 
+                                     height:11px" class="math gen" />. A predicate operator is one that "returns" a predicate, an example existing predicate operator is <img src="images/img-0005.png" alt="$finite$" style="vertical-align:-3px; 
+                                     width:44px; 
+                                     height:14px" class="math gen" />. </p></li><li><p>Definition of <b class="bfseries">rewrite rules</b>: rewrite rules are one-directional equalities that can be applied from left to right. The Theory plug-in can be used to define rewrite rules. </p></li><li><p>Definition of <b class="bfseries">inference rules</b>: inference rules can be used to infer new hypotheses, split a goal into sub-goals or discharge sequents. </p></li><li><p>Definition of <b class="bfseries">polymorphic theorems</b>: theorems can be defined and validated once, and can then be imported into sequents of proof obligations if a suitable type instantiation is available. </p></li><li><p><b class="bfseries">Validation of extensions</b>: where appropriate, proof obligations are generated to ensure soundness of extensions. This includes, proof obligations for validity of inference and rewrite rules, as well as proof obligations to validate operator properties such as associativity and commutativity. </p></li>
+</ol></li><li><p><b class="bfseries"><i class="itshape">Theory Deployment:</i></b> this step signifies that a theory is ready for use. Theories can be deployed after they have been optionally validated by the user. It is strongly advisable to discharge all proof obligations before deployment. </p></li>
+</ol><p> Once a theory has been deployed to its designated project, all its extensions (mathematical and prover extensions) can be used in models. In later sections, we show the two different scopes of theory availability. </p></div>
+
+
+
+
+
+<div class="navigation">
+<span>Previous: <a href="sect0001.html">Motivation</a></span>
+<span>Next: <a href="quickStart.html">Quick Start</a></span>
+<span>Up: <a href="index.html">Theory Plug-in User Manual</a></span>
+</div>
+
+</body>
+</html>

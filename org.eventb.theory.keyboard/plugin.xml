@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="realKeyboard"
+         name="Keyboard for real arithmetics"
+         point="org.rodinp.keyboard.core.symbols">
+      <symbol
+            combo="REAL"
+            id="realNumbers"
+            name="%realNumbersName"
+            translation="ℝ">
+      </symbol>
+      <symbol
+            combo="*r"
+            id="realMultiply"
+            name="%realMultiplyName"
+            translation="⊛">
+      </symbol>
+      <symbol
+            combo="/r"
+            id="realDivide"
+            name="%realDivideName"
+            translation="⨸">
+      </symbol>
+      <symbol
+            combo="&lt;r"
+            id="realLessThan"
+            name="%realLessThanName"
+            translation="⋖">
+      </symbol>
+      <symbol
+            combo="&lt;=r"
+            id="realLessThanOrEqual"
+            name="%realLessThanOrEqualName"
+            translation="⪁">
+      </symbol>
+      <symbol
+            combo="&gt;r"
+            id="realGreaterThan"
+            name="%realGreaterThanName"
+            translation="⋗">
+      </symbol>
+      <symbol
+            combo="&gt;=r"
+            id="realGreaterThanOrEqual"
+            name="%realGreaterThanOrEqualName"
+            translation="⪂">
+      </symbol>
+      <symbol
+            combo="-r"
+            id="realUnaryMinus"
+            name="%realUnaryMinusName"
+            translation="⊖">
+      </symbol>
+      <symbol
+            combo="+r"
+            id="realPlus"
+            name="%realPlusName"
+            translation="⊕">
+      </symbol>
+   </extension>
+
+</plugin>

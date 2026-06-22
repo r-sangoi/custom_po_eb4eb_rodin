@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+	<feature id="org.eventb.theory.feature">
+		<category name="Modelling_Extensions"/>
+	</feature>
+	<category-def name="Modelling_Extensions" label="Modelling Extensions">
+		<description>
+			Extensions to the Event-B modelling notation
+		</description>
+	</category-def>
+</site>
