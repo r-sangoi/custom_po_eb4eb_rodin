@@ -421,19 +421,21 @@ public class EB4EBContextBuilder extends ContextBuilder {
 		List<BoundIdentDecl> variantBids = new ArrayList<BoundIdentDecl>(this.bids);
 		variantBids.add(this.factory.makeBoundIdentDecl(VARIANT_VARIABLE_NAME, null));
 
-		Expression variantExpression;
+		Predicate setPredicate;
+//		Expression variantExpression;
 		if(this.variant == null) {
-			variantExpression = this.factory.makeEmptySet(null, null);
+			setPredicate = this.factory.makeLiteralPredicate(Formula.BTRUE, null);
+//			variantExpression = this.factory.makeEmptySet(null, null);
 		} else {			
-			Predicate setPredicate = this.factory.makeRelationalPredicate(Formula.EQUAL, this.factory.makeFreeIdentifier(VARIANT_VARIABLE_NAME, null), this.variant,
+			setPredicate = this.factory.makeRelationalPredicate(Formula.EQUAL, this.factory.makeFreeIdentifier(VARIANT_VARIABLE_NAME, null), this.variant,
 					null);
 			setPredicate = setPredicate.bindTheseIdents(variantFids);
-	
-			Expression setMaplets = EB4EBAstUtils.makeMapletVars(this.factory, variantFids);
-			setMaplets = setMaplets.bindTheseIdents(variantFids);
-	
-			variantExpression = this.factory.makeQuantifiedExpression(Formula.CSET, variantBids, setPredicate, setMaplets, null, Form.Explicit);	
 		}
+		Expression setMaplets = EB4EBAstUtils.makeMapletVars(this.factory, variantFids);
+		setMaplets = setMaplets.bindTheseIdents(variantFids);
+
+		Expression variantExpression = this.factory.makeQuantifiedExpression(Formula.CSET, variantBids, setPredicate, setMaplets, null, Form.Explicit);	
+		
 		super.addAxiom(this.factory.makeRelationalPredicate(Formula.EQUAL, variantDestructor, variantExpression, null), false);
 	}
 
